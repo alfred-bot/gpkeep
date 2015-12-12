@@ -8,7 +8,7 @@ local function gpadd(msg)
   end
   local data = load_data(_config.moderation.data)
   if data[tostring(msg.to.id)] then
-    return 'Group is already added.'
+    return 'گروه تقدیم به شما'
   end
     -- create data array in moderation.json
   data[tostring(msg.to.id)] = {
@@ -25,7 +25,7 @@ local function gpadd(msg)
     }
   save_data(_config.moderation.data, data)
 
-  return 'Group has been added.'
+  return 'گروه تقدیم به شما''
 end
 
 local function gprem(msg)
@@ -36,13 +36,13 @@ local function gprem(msg)
     local data = load_data(_config.moderation.data)
     local receiver = get_receiver(msg)
   if not data[tostring(msg.to.id)] then
-    return 'Group is not added.'
+    return 'گروه برای شما نیست'
   end
 
   data[tostring(msg.to.id)] = nil
   save_data(_config.moderation.data, data)
 
-  return 'Group has been removed'
+  return 'گروه به گا رفت'
 end
 
 local function export_chat_link_callback(extra, success, result)
@@ -60,7 +60,7 @@ end
 
 local function set_description(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است"
   end
   local data_cat = 'description'
 	data[tostring(msg.to.id)][data_cat] = deskripsi
@@ -72,7 +72,7 @@ end
 local function get_description(msg, data)
   local data_cat = 'description'
   if not data[tostring(msg.to.id)][data_cat] then
-    return 'No description available.'
+    return 'چیزی یافت نشد'
 	end
   local about = data[tostring(msg.to.id)][data_cat]
   return string.gsub(msg.to.print_name, "_", " ")..':\n\n'..about
@@ -80,7 +80,7 @@ end
 
 local function set_rules(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local data_cat = 'rules'
 	data[tostring(msg.to.id)][data_cat] = rules
@@ -92,7 +92,7 @@ end
 local function get_rules(msg, data)
   local data_cat = 'rules'
   if not data[tostring(msg.to.id)][data_cat] then
-    return 'No rules available.'
+    return 'اینجا هنوز بی قانونه'
 	end
   local rules = data[tostring(msg.to.id)][data_cat]
   local rules = string.gsub(msg.to.print_name, '_', ' ')..' rules:\n\n'..rules
@@ -102,120 +102,120 @@ end
 -- dis/allow APIs bots to enter group. Spam prevention.
 local function allow_api_bots(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_bot_lock = data[tostring(msg.to.id)]['settings']['lock_bots']
 	if group_bot_lock == 'no' then
-    return 'Bots allowed to enter group.'
+    return 'اجازه ورود بات داده شد'
 	else
     data[tostring(msg.to.id)]['settings']['lock_bots'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Group is open for bots.'
+    return 'گروه برای بات باز است'
 	end
 end
 
 local function disallow_api_bots(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_bot_lock = data[tostring(msg.to.id)]['settings']['lock_bots']
 	if group_bot_lock == 'yes' then
-    return 'Group already locked from bots.'
+    return 'هیچ باتی حق ورود ندارد'
 	else
     data[tostring(msg.to.id)]['settings']['lock_bots'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Group is locked from bots.'
+    return 'ورود بات ممنوع است'
 	end
 end
 
 -- lock/unlock group name. bot automatically change group name when locked
 local function lock_group_name(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
   local group_name_lock = data[tostring(msg.to.id)]['settings']['lock_name']
 	if group_name_lock == 'yes' then
-    return 'Group name is already locked'
+    return 'اگه تونستی اسمو عوض کن'
 	else
     data[tostring(msg.to.id)]['settings']['lock_name'] = 'yes'
     save_data(_config.moderation.data, data)
     data[tostring(msg.to.id)]['settings']['set_name'] = string.gsub(msg.to.print_name, '_', ' ')
     save_data(_config.moderation.data, data)
-	return 'Group name has been locked'
+	return 'اگه تونستی اسمو عوض کن'
 	end
 end
 
 local function unlock_group_name(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
   local group_name_lock = data[tostring(msg.to.id)]['settings']['lock_name']
 	if group_name_lock == 'no' then
-    return 'Group name is already unlocked'
+    return 'نترس کسی نمیتونه اسمو عوض کنه'
 	else
     data[tostring(msg.to.id)]['settings']['lock_name'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Group name has been unlocked'
+    return 'نترس کسی نمیتونه اسمو عوض کنه'
 	end
 end
 
 --lock/unlock group member. bot automatically kick new added user when locked
 local function lock_group_member(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_member_lock = data[tostring(msg.to.id)]['settings']['lock_member']
 	if group_member_lock == 'yes' then
-    return 'Group members are already locked'
+    return 'گروه برای ورود بستس'
 	else
     data[tostring(msg.to.id)]['settings']['lock_member'] = 'yes'
     save_data(_config.moderation.data, data)
 	end
-	return 'Group members has been locked'
+	return 'گروه برای ورود بستس'
 end
 
 local function unlock_group_member(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_member_lock = data[tostring(msg.to.id)]['settings']['lock_member']
 	if group_member_lock == 'no' then
-    return 'Group members are not locked'
+    return 'گروه باز شد'
 	else
     data[tostring(msg.to.id)]['settings']['lock_member'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Group members has been unlocked'
+    return 'گروه باز بود'
 	end
 end
 
 --lock/unlock group photo. bot automatically keep group photo when locked
 local function lock_group_photo(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_photo_lock = data[tostring(msg.to.id)]['settings']['lock_photo']
 	if group_photo_lock == 'yes' then
-    return 'Group photo is already locked'
+    return 'عکس قفل شد'
 	else
     data[tostring(msg.to.id)]['settings']['set_photo'] = 'waiting'
     save_data(_config.moderation.data, data)
 	end
-	return 'Please send me the group photo now'
+	return 'عکستو بهم میدی =)'
 end
 
 local function unlock_group_photo(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است""
   end
   local group_photo_lock = data[tostring(msg.to.id)]['settings']['lock_photo']
 	if group_photo_lock == 'no' then
-    return 'Group photo is not locked'
+    return 'عکس قفل شد'
 	else
     data[tostring(msg.to.id)]['settings']['lock_photo'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Group photo has been unlocked'
+    return 'عکس قفل شد'
 	end
 end
 
@@ -241,7 +241,7 @@ end
 -- show group settings
 local function show_group_settings(msg, data)
   if not is_sudo(msg) then
-    return "For moderators only!"
+    return "برای مدیران امکان پذیر است"
   end
   local settings = data[tostring(msg.to.id)]['settings']
   if settings.lock_bots == 'yes' then
@@ -480,37 +480,37 @@ end
 return {
   description = "Plugin to manage group chat.",
   usage = {
-    "!about : Read group description",
-    "!group <lock|unlock> bot : {Dis}allow APIs bots",
-    "!group <lock|unlock> member : Lock/unlock group member",
-    "!group <lock|unlock> name : Lock/unlock group name",
-    "!group <lock|unlock> photo : Lock/unlock group photo",
-    "!group settings : Show group settings",
-    "!link <get|set> : Get or revoke invite link",
-    "!rules : Read group rules",
-    "!setabout <description> : Set group description",
-    "!setname <new_name> : Set group name",
-    "!setphoto : Set group photo",
-    "!setrules <rules> : Set group rules"
+    "$about : Read group description",
+    "$group <lock|unlock> bot : {Dis}allow APIs bots",
+    "$group <lock|unlock> member : Lock/unlock group member",
+    "$group <lock|unlock> name : Lock/unlock group name",
+    "$group <lock|unlock> photo : Lock/unlock group photo",
+    "$group settings : Show group settings",
+    "$link <get|set> : Get or revoke invite link",
+    "$rules : Read group rules",
+    "$setabout <description> : Set group description",
+    "$setname <new_name> : Set group name",
+    "$setphoto : Set group photo",
+    "$setrules <rules> : Set group rules"
   },
   patterns = {
-    "^!(about)$",
+    "^$(about)$",
     "%[(audio)%]",
     "%[(document)%]",
-    "^!(gpadd)$",
-    "^!(gprem)$",
-    "^!(group) (lock) (.*)$",
-    "^!(group) (settings)$",
-    "^!(group) (unlock) (.*)$",
-    "^!(link) (.*)$",
+    "^$(gpadd)$",
+    "^$(gprem)$",
+    "^$(group) (lock) (.*)$",
+    "^$(group) (settings)$",
+    "^$(group) (unlock) (.*)$",
+    "^$(link) (.*)$",
     "%[(photo)%]",
     "%[(photo)%]",
-    "^!(rules)$",
-    "^!(setabout) (.*)$",
-    "^!(setname) (.*)$",
-    "^!(setphoto)$",
-    "^!(setrules) (.*)$",
-    "^!!tgservice (.+)$",
+    "^$(rules)$",
+    "^$(setabout) (.*)$",
+    "^$(setname) (.*)$",
+    "^$(setphoto)$",
+    "^$(setrules) (.*)$",
+    "^$!tgservice (.+)$",
     "%[(video)%]"
   },
   run = run,
