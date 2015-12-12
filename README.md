@@ -12,14 +12,23 @@
 # :trollface:
 
 
-#### **Bot Installtion**
-  cd $HOME
-    git clone https://github.com/MojtabaMonfared/GP-Keep.git
-      cd telegram-bot
-        ./merbot.sh install
-          ./merbot.sh
 
-/play ohmy
+
+
+### **Bot Installtion**
+####  cd $HO
+  
+####   git clone https://github.com/MojtabaMonfared/GP-Keep.git
+    
+ ####    cd telegram-bot
+      
+  ####    ./merbot.sh install
+        
+   ####     ./merbot.sh
+
+
+
+
 
 
 :smiley:
