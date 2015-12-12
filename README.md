@@ -1,10 +1,10 @@
-# <p align="center"> GP Keep
-
+# <p align="center"> GP Keep :smiley:
+/play ohyeah
 <p align="center">**A Telegram Group Keeper**
 <p align="center">** By [MojtabaMonfared](https://telegram.me/PokerFace_Dev)
 
 **GP Keep** is Telegram group guardian bot based on [telegram-bot](https://github.com/yagop/telegram-bot).
-
+:smiley:
 **GP Keep** is dedicated as a group manager bot, so it's have no unnecessary plugins other than listed below. You can always add plugins as you need `` .
 
 
@@ -14,14 +14,15 @@
 
 #### **Bot Installtion**
   cd $HOME
-git clone https://github.com/MojtabaMonfared/GP-Keep.git
-cd telegram-bot
-./merbot.sh install
-./merbot.sh
+  git clone https://github.com/MojtabaMonfared/GP-Keep.git
+  cd telegram-bot
+  ./merbot.sh install
+  ./merbot.sh
+
+/play ohmy
 
 
-
-
+:smiley:
 1. **Banhammer**  
 Plugin to manage bans, kicks and white/black lists.
 2. **Channels**  
@@ -48,7 +49,7 @@ Check https://github.com/rizaumami/merbot/wiki/Installation to deploy `merbot` o
 #### Enable more [`plugins`](https://github.com/MojtabaMonfared/merbot/tree/master/plugins)
 
 
-
+:smiley:
 See the plugins list with `!plugins` command.
 
 Enable a disabled plugin by `!plugins enable [name]`.
@@ -59,7 +60,7 @@ Those commands require a privileged user, privileged users are defined inside `d
 
 #### Contact me
 > you can contact me in [Telegram](https://telegram.me/PokerFace_Dev).
-> :D
+> :D :smiley:
 
 
 
