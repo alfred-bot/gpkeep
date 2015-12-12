@@ -16,15 +16,15 @@
 
 
 ### **Bot Installtion**
-####  cd $HO
+####cd $HOME
   
-####   git clone https://github.com/MojtabaMonfared/GP-Keep.git
+####git clone https://github.com/MojtabaMonfared/GP-Keep.git
     
- ####    cd telegram-bot
+####cd telegram-bot
       
-  ####    ./merbot.sh install
+####./merbot.sh install
         
-   ####     ./merbot.sh
+####./merbot.sh
 
 
 
