@@ -1,11 +1,14 @@
-# <p align="center">merbot
+# <p align="center"> GP Keep
 
-<p align="center">**A Telegram Group Peace Keeper Bot**
+<p align="center">**A Telegram Group Keeper**
+<p align="center">** By [MojtabaMonfared](https://telegram.me/PokerFace_Dev)
 
+**GP Keep** is Telegram group guardian bot based on [telegram-bot](https://github.com/yagop/telegram-bot).
 
-**Merbot** is Telegram group guardian bot based on [telegram-bot](https://github.com/yagop/telegram-bot).
+**GP Keep** is dedicated as a group manager bot, so it's have no unnecessary plugins other than listed below. You can always add plugins as you need `` .
 
-**Merbot** is dedicated as a group manager bot, so it's have no unnecessary plugins other than listed below. You can always add plugins as you need.
+## [Installtion](https://github.com/yagop/telegram-bot/wiki/Installation)
+
 
 1. **Banhammer**  
 Plugin to manage bans, kicks and white/black lists.
@@ -30,7 +33,9 @@ Consult [wiki](https://github.com/rizaumami/merbot/wiki/Plugins) to know how to 
 
 Check https://github.com/rizaumami/merbot/wiki/Installation to deploy `merbot` on your distributions.
 
-#### Enable more [`plugins`](https://github.com/rizaumami/merbot/tree/master/plugins)
+#### Enable more [`plugins`](https://github.com/MojtabaMonfared/merbot/tree/master/plugins)
+
+
 
 See the plugins list with `!plugins` command.
 
@@ -42,5 +47,7 @@ Those commands require a privileged user, privileged users are defined inside `d
 
 #### Contact me
 
-Please open a [github issue](https://github.com/rizaumami/merbot/issues) if you found an issue with `merbot`.
-Or you can contact me in [merbot discussion group](https://telegram.me/joinchat/AfB26wGZCncqP8GjKOhrcw).
+Please open a [github issue](https://github.com/MojtabaMonfared/merbot/issues) if you found an issue with `GPKeep`.
+Or you can contact me in [Telegram](https://telegram.me/PokerFace_Dev).
+
+### Enjoy it!
