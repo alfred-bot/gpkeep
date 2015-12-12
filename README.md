@@ -7,7 +7,7 @@
 :smiley:
 **GP Keep** is dedicated as a group manager bot, so it's have no unnecessary plugins other than listed below. You can always add plugins as you need `` .
 
-
+#### :trollface:
 
 
 
